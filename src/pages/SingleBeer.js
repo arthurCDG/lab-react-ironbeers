@@ -3,19 +3,19 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 
 const SingleBeer = () => {
-  const [beer, setOneBeer] = useState({});
+  const [beer, setBeer] = useState({});
   let { id } = useParams();
 
   useEffect(() => {
     axios
       .get("https://ih-beers-api2.herokuapp.com/beers/" + id)
-      .then((dbResponse) => setOneBeer(dbResponse.data))
+      .then((dbResponse) => setBeer(dbResponse.data))
       .catch((err) => console.error(err));
   }, [id]);
 
   return (
     <div>
-      <img src={beer.image} alt={beer.name} />
+      <img src={beer.image_url} alt={beer.name} />
       <div>
         <h2>{beer.name}</h2>
         <span>{beer.attenuation_level}</span>

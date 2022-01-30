@@ -22,7 +22,11 @@ const Beers = () => {
     <div>
       {allBeers.map((beer) => {
         return (
-          <Link to={`/beers/${beer._id}`} element={<SingleBeer beer={beer} />}>
+          <Link
+            to={`/beers/${beer._id}`}
+            element={<SingleBeer />}
+            key={beer._id}
+          >
             <div>
               <figure>
                 <img src={beer.image_url} alt={beer.name} />

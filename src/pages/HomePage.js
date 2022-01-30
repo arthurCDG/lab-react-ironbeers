@@ -1,8 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import Beers from "./Beers";
-// import SingleBeer from "./SingleBeer";
-// import NewBeer from "./NewBeer";
 
 import allBeersImage from "./../assets/beers.png";
 import newBeerImage from "./../assets/new-beer.png";
@@ -11,7 +8,7 @@ import randomBeerImage from "./../assets/random-beer.png";
 const HomePage = () => {
   return (
     <main>
-       <h1>IronBeer</h1>
+      <h1>IronBeer</h1>
       <Link to={"/beers"}>
         <img src={allBeersImage} alt="all-beers" />
         <h3>All beers</h3>
