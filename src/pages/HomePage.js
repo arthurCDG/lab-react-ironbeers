@@ -27,7 +27,7 @@ const HomePage = () => {
           recusandae minima.
         </p>
       </Link>
-      <Link to={"/new"}>
+      <Link to={"/new-beer"}>
         <img src={randomBeerImage} alt="new-beer" />
         <h3>New Beer</h3>
         <p>
