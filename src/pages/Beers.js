@@ -7,19 +7,28 @@ import SingleBeer from "./SingleBeer";
 const Beers = () => {
   const [allBeers, setAllBeers] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [query, setQuery] = useState("");
 
   useEffect(() => {
     axios
-      .get("https://ih-beers-api2.herokuapp.com/beers")
+      .get("https://ih-beers-api2.herokuapp.com/beers/search?q=" + query)
       .then((dbResponse) => {
         setAllBeers(dbResponse.data);
         setLoading(!loading);
       })
       .catch((err) => console.error(err));
-  }, []);
+  }, [query]);
 
   return (
     <div>
+      <div className="p-5">
+        <input
+          placeholder="Look for a specific beer"
+          type="text"
+          className="input"
+          onChange={(evt) => setQuery(evt.target.value)}
+        />
+      </div>
       {allBeers.map((beer) => {
         return (
           <Link
